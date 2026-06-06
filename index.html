@@ -44,46 +44,6 @@ padding:40px;
 
 }
 
-/* ENTER SCREEN */
-
-#enterScreen{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.cursor{
-
-font-size:42px;
-
-animation:blink .9s infinite;
-}
-
-.cursor.stop{
-
-animation:none;
-}
-
-@keyframes blink{
-
-0%{opacity:1;}
-50%{opacity:0;}
-100%{opacity:1;}
-
-}
-
-.enterText{
-
-font-size:15px;
-
-color:#7a7a7a;
-
-letter-spacing:.08em;
-
-}
-
 /* BOOT */
 
 #bootScreen{
@@ -226,24 +186,6 @@ text-align:center;
 
 <body>
 
-<!-- ENTER -->
-
-<div
-class="screen"
-id="enterScreen">
-
-<div
-class="cursor"
-id="cursor">
->
-</div>
-
-<div class="enterText">
-press any key or tap anywhere to enter
-</div>
-
-</div>
-
 <!-- BOOT -->
 
 <div
@@ -307,42 +249,6 @@ const logs = [
 "preparing interface...\n"
 
 ];
-
-function startSystem(e){
-
-if(started) return;
-
-if(e) e.preventDefault();
-
-started = true;
-  
-document
-.getElementById("cursor")
-.classList.add("stop");
-
-document
-.getElementById("enterScreen")
-.style.display="none";
-
-document
-.getElementById("bootScreen")
-.style.display="flex";
-
-runBoot();
-
-}
-
-window.addEventListener(
-"keydown",
-startSystem,
-{once:true}
-);
-
-window.addEventListener(
-"pointerdown",
-startSystem,
-{once:true}
-);
 
 function runBoot(){
 
@@ -427,6 +333,12 @@ document
 next();
 
 }
+
+  document
+.getElementById("bootScreen")
+.style.display = "flex";
+
+runBoot();
 
 </script>
 
