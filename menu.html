@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Subject Analysis Database</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:
+'IBM Plex Mono',
+monospace;
+}
+
+body{
+
+background:#050505;
+
+overflow:hidden;
+
+}
+
+/* Window */
+
+.window{
+
+width:80vw;
+height:80vh;
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+background:#ffffff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:
+0 30px 80px
+rgba(0,0,0,.35);
+
+animation:
+fadeIn .5s;
+
+}
+
+/* Top Bar */
+
+.topBar{
+
+height:56px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+padding:0 24px;
+
+border-bottom:
+1px solid
+rgba(0,0,0,.08);
+
+font-size:14px;
+
+font-weight:500;
+
+letter-spacing:.08em;
+
+}
+
+.controls{
+
+display:flex;
+
+gap:18px;
+
+font-size:18px;
+
+color:#444;
+
+}
+
+.controls span{
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.controls span:hover{
+
+opacity:.55;
+
+}
+
+/* Files */
+
+.files{
+
+padding:28px;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.file{
+
+padding:16px 18px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.2s;
+
+font-size:15px;
+
+color:#111;
+
+}
+
+.file:hover{
+
+background:
+rgba(0,0,0,.05);
+
+}
+
+/* Bottom */
+
+.footer{
+
+position:absolute;
+
+bottom:18px;
+right:24px;
+
+font-size:12px;
+
+line-height:1.8;
+
+color:#777;
+
+text-align:right;
+
+}
+
+/* Fade */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:
+translate(-50%,-47%);
+}
+
+to{
+opacity:1;
+transform:
+translate(-50%,-50%);
+}
+
+}
+
+@media(max-width:700px){
+
+.window{
+
+width:92vw;
+height:88vh;
+
+}
+
+.topBar{
+
+font-size:12px;
+
+}
+
+.file{
+
+font-size:14px;
+
+padding:14px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="window">
+
+<div class="topBar">
+
+<div>
+
+SUBJECT ANALYSIS DATABASE
+
+</div>
+
+<div class="controls">
+
+<span onclick="minimize()">
+—
+</span>
+
+<span onclick="maximize()">
+□
+</span>
+
+<span onclick="closeSystem()">
+×
+</span>
+
+</div>
+
+</div>
+
+<div class="files">
+
+<div
+class="file"
+onclick="location.href='./general-profile.html'">
+
+GENERAL PROFILE
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./timeline.html'">
+
+TIMELINE
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./proof-survived.html'">
+
+PROOF SURVIVED
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./puzzle-recovery.html'">
+
+PUZZLE RECOVERY
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./small-us.html'">
+
+SMALL US
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./certificate.html'">
+
+CERTIFICATE OF BEING NORMAL
+
+</div>
+
+<div
+class="file"
+onclick="location.href='./final-report.html'">
+
+FINAL REPORT
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Last updated:
+
+today
+
+</div>
+
+</div>
+
+<script>
+
+function minimize(){
+
+}
+
+function maximize(){
+
+}
+
+function closeSystem(){
+
+window.location.href =
+"./desktop.html";
+
+}
+
+</script>
+
+</body>
+</html>
