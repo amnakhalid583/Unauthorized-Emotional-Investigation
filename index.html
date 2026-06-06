@@ -239,7 +239,7 @@ id="cursor">
 </div>
 
 <div class="enterText">
-press any key to enter
+press any key or tap anywhere to enter
 </div>
 
 </div>
@@ -280,8 +280,8 @@ subject located
 class="screen"
 id="menuScreen">
 
-MAIN MENU COMING SOON
-
+SUBJECT ANALYSIS DATABASE
+  
 </div>
 
 <script>
@@ -308,21 +308,17 @@ const logs = [
 
 ];
 
-function startSystem(){
+function startSystem(e){
 
 if(started) return;
 
-started = true;
+if(e) e.preventDefault();
 
+started = true;
+  
 document
 .getElementById("cursor")
 .classList.add("stop");
-
-document
-.getElementById("enterScreen")
-.classList.add("fadeOut");
-
-setTimeout(()=>{
 
 document
 .getElementById("enterScreen")
@@ -334,23 +330,18 @@ document
 
 runBoot();
 
-},600);
-
 }
 
-document.addEventListener(
+window.addEventListener(
 "keydown",
-startSystem
+startSystem,
+{once:true}
 );
 
-document.addEventListener(
-"click",
-startSystem
-);
-
-document.addEventListener(
-"touchstart",
-startSystem
+window.addEventListener(
+"pointerdown",
+startSystem,
+{once:true}
 );
 
 function runBoot(){
