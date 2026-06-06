@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Subject Analysis Database</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'IBM Plex Mono',monospace;
+}
+
+body{
+
+background:#050505;
+overflow:hidden;
+color:#d7d7d7;
+
+width:100vw;
+height:100vh;
+
+}
+
+.screen{
+
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:40px;
+
+}
+
+/* ENTER SCREEN */
+
+#enterScreen{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.cursor{
+
+font-size:42px;
+
+animation:blink .9s infinite;
+}
+
+.cursor.stop{
+
+animation:none;
+}
+
+@keyframes blink{
+
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+
+}
+
+.enterText{
+
+font-size:15px;
+
+color:#7a7a7a;
+
+letter-spacing:.08em;
+
+}
+
+/* BOOT */
+
+#bootScreen{
+
+display:none;
+
+align-items:flex-start;
+justify-content:flex-start;
+
+}
+
+.bootContainer{
+
+margin-top:90px;
+margin-left:80px;
+
+max-width:700px;
+
+font-size:15px;
+
+line-height:2.2;
+
+white-space:pre-line;
+
+}
+
+/* ACCESS */
+
+#accessScreen{
+
+display:none;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.accessTitle{
+
+font-size:30px;
+
+letter-spacing:.18em;
+
+font-weight:300;
+
+}
+
+.accessSub{
+
+font-size:14px;
+
+color:#7a7a7a;
+
+}
+
+/* MENU PLACEHOLDER */
+
+#menuScreen{
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+font-size:20px;
+
+letter-spacing:.1em;
+
+}
+
+.fadeOut{
+
+animation:fadeOut .6s forwards;
+}
+
+.fadeIn{
+
+animation:fadeIn .6s forwards;
+}
+
+@keyframes fadeOut{
+
+to{
+opacity:0;
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@media(max-width:700px){
+
+.cursor{
+
+font-size:34px;
+
+}
+
+.enterText{
+
+font-size:13px;
+
+text-align:center;
+
+}
+
+.bootContainer{
+
+margin-top:50px;
+margin-left:20px;
+
+font-size:13px;
+
+}
+
+.accessTitle{
+
+font-size:22px;
+
+text-align:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ENTER -->
+
+<div
+class="screen"
+id="enterScreen">
+
+<div
+class="cursor"
+id="cursor">
+>
+</div>
+
+<div class="enterText">
+press any key to enter
+</div>
+
+</div>
+
+<!-- BOOT -->
+
+<div
+class="screen"
+id="bootScreen">
+
+<div
+class="bootContainer"
+id="bootText">
+</div>
+
+</div>
+
+<!-- ACCESS -->
+
+<div
+class="screen"
+id="accessScreen">
+
+<div class="accessTitle">
+ACCESS LEVEL:
+GRANTED
+</div>
+
+<div class="accessSub">
+subject located
+</div>
+
+</div>
+
+<!-- MENU PLACEHOLDER -->
+
+<div
+class="screen"
+id="menuScreen">
+
+MAIN MENU COMING SOON
+
+</div>
+
+<script>
+
+let started = false;
+
+const logs = [
+
+"INITIALIZING ARCHIVE...\n",
+
+"loading records...\n[ OK ]\n",
+
+"recovering archives...\n[ OK ]\n",
+
+"cross-checking evidence...\n[ OK ]\n",
+
+"Last updated: today\n",
+
+"analyzing subject...\n",
+
+"subject found.\n",
+
+"preparing interface...\n"
+
+];
+
+function startSystem(){
+
+if(started) return;
+
+started = true;
+
+document
+.getElementById("cursor")
+.classList.add("stop");
+
+document
+.getElementById("enterScreen")
+.classList.add("fadeOut");
+
+setTimeout(()=>{
+
+document
+.getElementById("enterScreen")
+.style.display="none";
+
+document
+.getElementById("bootScreen")
+.style.display="flex";
+
+runBoot();
+
+},600);
+
+}
+
+document.addEventListener(
+"keydown",
+startSystem
+);
+
+document.addEventListener(
+"click",
+startSystem
+);
+
+document.addEventListener(
+"touchstart",
+startSystem
+);
+
+function runBoot(){
+
+const box =
+document.getElementById(
+"bootText"
+);
+
+let i = 0;
+
+function next(){
+
+if(i < logs.length){
+
+box.innerHTML += logs[i];
+
+i++;
+
+setTimeout(
+next,
+1000
+);
+
+}
+
+else{
+
+setTimeout(()=>{
+
+document
+.getElementById("bootScreen")
+.classList.add("fadeOut");
+
+setTimeout(()=>{
+
+document
+.getElementById("bootScreen")
+.style.display="none";
+
+document
+.getElementById("accessScreen")
+.style.display="flex";
+
+document
+.getElementById("accessScreen")
+.classList.add("fadeIn");
+
+setTimeout(()=>{
+
+document
+.getElementById("accessScreen")
+.classList.add("fadeOut");
+
+setTimeout(()=>{
+
+document
+.getElementById("accessScreen")
+.style.display="none";
+
+document
+.getElementById("menuScreen")
+.style.display="flex";
+
+document
+.getElementById("menuScreen")
+.classList.add("fadeIn");
+
+},600);
+
+},1500);
+
+},500);
+
+},600);
+
+},800);
+
+}
+
+}
+
+next();
+
+}
+
+</script>
+
+</body>
+</html>
