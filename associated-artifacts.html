@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Associated Artifacts</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:
+'IBM Plex Mono',
+monospace;
+}
+
+body{
+
+background:#050505;
+
+overflow:hidden;
+
+}
+
+/* Window */
+
+.window{
+
+width:80vw;
+height:80vh;
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+background:#ffffff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:
+0 30px 80px
+rgba(0,0,0,.35);
+
+animation:
+fadeIn .5s;
+
+}
+
+/* Top Bar */
+
+.topBar{
+
+height:56px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+padding:0 24px;
+
+border-bottom:
+1px solid
+rgba(0,0,0,.08);
+
+font-size:14px;
+
+font-weight:500;
+
+letter-spacing:.08em;
+
+color:#111;
+
+}
+
+.controls{
+
+display:flex;
+
+gap:18px;
+
+font-size:18px;
+
+color:#444;
+
+}
+
+.controls span{
+
+cursor:default;
+
+}
+
+.close{
+
+cursor:pointer !important;
+
+transition:.2s;
+
+}
+
+.close:hover{
+
+opacity:.55;
+
+}
+
+/* Content */
+
+.content{
+
+padding:36px;
+
+height:calc(80vh - 56px);
+
+overflow-y:auto;
+
+}
+
+.content::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.content::-webkit-scrollbar-thumb{
+
+background:#d0d0d0;
+
+border-radius:20px;
+
+}
+
+.title{
+
+font-size:18px;
+
+letter-spacing:.08em;
+
+margin-bottom:28px;
+
+}
+
+/* Artifact */
+
+.artifact{
+
+border:1px solid
+rgba(0,0,0,.08);
+
+border-radius:14px;
+
+padding:20px;
+
+margin-bottom:22px;
+
+}
+
+.artifactTitle{
+
+font-size:14px;
+
+font-weight:500;
+
+letter-spacing:.08em;
+
+margin-bottom:14px;
+
+}
+
+.placeholder{
+
+height:130px;
+
+border:2px dashed
+rgba(0,0,0,.12);
+
+border-radius:10px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:13px;
+
+color:#888;
+
+margin-bottom:16px;
+
+}
+
+.label{
+
+font-size:13px;
+
+font-weight:500;
+
+margin-top:10px;
+
+margin-bottom:6px;
+
+}
+
+.text{
+
+font-size:14px;
+
+line-height:1.9;
+
+color:#333;
+
+white-space:pre-line;
+
+}
+
+/* Fade */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:
+translate(-50%,-47%);
+}
+
+to{
+opacity:1;
+transform:
+translate(-50%,-50%);
+}
+
+}
+
+@media(max-width:700px){
+
+.window{
+
+width:92vw;
+height:88vh;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+.placeholder{
+
+height:100px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="window">
+
+<div class="topBar">
+
+<div>
+
+ASSOCIATED ARTIFACTS
+
+</div>
+
+<div class="controls">
+
+<span>—</span>
+
+<span>□</span>
+
+<span
+class="close"
+onclick="window.location.href='./menu.html'">
+×
+</span>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="title">
+
+ASSOCIATED ARTIFACTS
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #001
+
+</div>
+
+<div class="placeholder">
+
+image goes here
+
+</div>
+
+<div class="label">
+
+Item
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Recovered From
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Significance
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #002
+
+</div>
+
+<div class="placeholder">
+
+image goes here
+
+</div>
+
+<div class="label">
+
+Item
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Recovered From
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Significance
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #003
+
+</div>
+
+<div class="placeholder">
+
+image goes here
+
+</div>
+
+<div class="label">
+
+Item
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Recovered From
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Significance
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #004
+
+</div>
+
+<div class="placeholder">
+
+image goes here
+
+</div>
+
+<div class="label">
+
+Item
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Recovered From
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Significance
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #005
+
+</div>
+
+<div class="placeholder">
+
+image goes here
+
+</div>
+
+<div class="label">
+
+Item
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Recovered From
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+<div class="label">
+
+Significance
+
+</div>
+
+<div class="text">
+
+...
+
+</div>
+
+</div>
+
+<div class="artifact">
+
+<div class="artifactTitle">
+
+ARTIFACT #006
+
+</div>
+
+<div class="placeholder">
+
+CLASSIFIED
+
+</div>
+
+<div class="label">
+
+Status
+
+</div>
+
+<div class="text">
+
+RESTRICTED
+
+</div>
+
+<div class="label">
+
+Investigator Note
+
+</div>
+
+<div class="text">
+
+Investigator refuses
+to elaborate.
+
+</div>
+
+</div>
+
+<div class="text">
+
+ARCHIVE STATUS
+
+Recovered Artifacts:
+6
+
+Lost Artifacts:
+unknown
+
+Objects still under investigation:
+1
+
+Investigator attachment to evidence:
+concerning
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
