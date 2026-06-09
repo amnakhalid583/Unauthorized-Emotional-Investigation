@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Final Conclusion</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:
+'IBM Plex Mono',
+monospace;
+}
+
+body{
+
+background:#050505;
+overflow:hidden;
+
+}
+
+/* Window */
+
+.window{
+
+width:80vw;
+height:80vh;
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+background:#ffffff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+
+box-shadow:
+0 30px 80px
+rgba(0,0,0,.35);
+
+animation:
+fadeIn .5s;
+
+}
+
+/* Top Bar */
+
+.topBar{
+
+height:56px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+padding:0 24px;
+
+border-bottom:
+1px solid
+rgba(0,0,0,.08);
+
+font-size:14px;
+
+font-weight:500;
+
+letter-spacing:.08em;
+
+color:#111;
+
+}
+
+.controls{
+
+display:flex;
+
+gap:18px;
+
+font-size:18px;
+
+color:#444;
+
+}
+
+.controls span{
+
+cursor:default;
+
+}
+
+.close{
+
+cursor:pointer !important;
+
+transition:.2s;
+
+}
+
+.close:hover{
+
+opacity:.55;
+
+}
+
+/* Content */
+
+.content{
+
+flex:1;
+
+padding:42px;
+
+overflow-y:auto;
+
+white-space:pre-line;
+
+font-size:15px;
+
+line-height:2.2;
+
+color:#111;
+
+}
+
+.content::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.content::-webkit-scrollbar-thumb{
+
+background:#d0d0d0;
+border-radius:20px;
+
+}
+
+/* Bottom */
+
+.bottom{
+
+height:55px;
+
+border-top:
+1px solid
+rgba(0,0,0,.08);
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+padding:0 24px;
+
+font-size:12px;
+
+color:#888;
+
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:
+translate(-50%,-47%);
+}
+
+to{
+opacity:1;
+transform:
+translate(-50%,-50%);
+}
+
+}
+
+@media(max-width:700px){
+
+.window{
+
+width:92vw;
+height:88vh;
+
+}
+
+.content{
+
+padding:24px;
+font-size:13px;
+
+}
+
+.bottom{
+
+font-size:10px;
+padding:0 14px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="window">
+
+<div class="topBar">
+
+<div>
+
+FINAL CONCLUSION
+
+</div>
+
+<div class="controls">
+
+<span>—</span>
+
+<span>□</span>
+
+<span
+class="close"
+onclick="window.location.href='./menu.html'">
+
+×
+
+</span>
+
+</div>
+
+</div>
+
+<div class="content">
+
+CASE STATUS
+
+Investigation completed.
+
+After reviewing all available evidence,
+the subject can no longer be classified
+through ordinary means.
+
+
+
+[ write paragraph here ]
+
+
+
+[ write paragraph here ]
+
+
+
+[ write paragraph here ]
+
+
+
+[ write paragraph here ]
+
+
+
+FINAL VERDICT
+
+Subject is not dangerous.
+
+Subject is not normal either.
+
+Further observation is no longer possible,
+because the investigator appears to have
+become emotionally compromised.
+
+
+
+CASE CLOSED.
+
+
+
+...probably.
+
+
+
+P.S.
+
+favorite version of subject:
+
+this one.
+
+</div>
+
+<div class="bottom">
+
+<div>
+
+Last updated:
+June 14
+
+</div>
+
+<div>
+
+Investigator's note:
+
+thank you for existing.
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
